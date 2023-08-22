@@ -1,5 +1,5 @@
 const { default: mongoose } = require('mongoose');
-const connectToMongo = require('./db.js');
+const connectToMongo = require('../db.js');
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({

@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 // respond with "hello world" when a GET request is made to the homepage
 
-
+app.use(express.json());
 // Available Routes
 app.use('/api/auth', require('./routes/auth'));
 app.get('/api/notes', require('./routes/notes'));
