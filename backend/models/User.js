@@ -1,5 +1,4 @@
 const { default: mongoose } = require('mongoose');
-const connectToMongo = require('../db.js');
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
@@ -23,5 +22,4 @@ const UserSchema = new Schema({
 });
 
 const User = mongoose.model("user", UserSchema);
-User.createIndexes();
 module.exports = User;

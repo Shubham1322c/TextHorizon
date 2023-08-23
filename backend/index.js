@@ -1,23 +1,19 @@
-const connectToMongo = require('./db.js');
+const connectToMongo = require('./db');
 const express = require('express')
+
 connectToMongo();
+const app = express()
+const port = 5000
 
+app.use(express.json())
 
-const app = express();
-const port = 3000;
-// respond with "hello world" when a GET request is made to the homepage
-
-app.use(express.json());
 // Available Routes
-app.use('/api/auth', require('./routes/auth'));
-app.get('/api/notes', require('./routes/notes'));
+app.use('/api/auth', require('./routes/auth'))
+app.use('/api/notes', require('./routes/notes'))
 
-
-
-app.get('/', (req, res) => {
-  res.send('hello world')
+app.use((req, res) => {
+  res.send("Hello World!");
 })
-
 app.listen(port, () => {
-    console.log(`App is running on http://localhost:${port}`);
+  console.log(`Example app listening at http://localhost:${port}`)
 })
