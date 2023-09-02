@@ -1,8 +1,11 @@
 const { default: mongoose } = require('mongoose');
-const connectToMongo = require('./db.js');
 const { Schema } = mongoose;
 
 const NotesSchema = new Schema({
+    user:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    },
     title:{
         type: String,
         required: true,
@@ -13,7 +16,7 @@ const NotesSchema = new Schema({
     },
     tags:{
         type: String,
-        default: "Genral",
+        default: "General",
     },
     date:{
         type: Date,

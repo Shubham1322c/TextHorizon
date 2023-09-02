@@ -3,8 +3,10 @@ const User = require('../models/User');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const fetchuser = require("../middleware/fetchuser");
 var jwt = require('jsonwebtoken');
-var fetchuser = require('../middleware/fetchuser');
+
+
 
 const JWT_SECRET = "sdhfjalshfueh8923478*&^%jahdui7665%$65EHIUU34#G5^&%";
 
