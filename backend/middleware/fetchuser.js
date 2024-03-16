@@ -13,7 +13,7 @@ const fetchuser = (req, res, next) => {
         next();
     }  catch (error) {
         console.error(error.message);
-        res.status(500).send("Please authenticate with a valid");
+        res.status(500).send("Please authenticate with a valid token");
       }
 }
 
